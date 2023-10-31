@@ -9,6 +9,7 @@ const forecast = require("./utils/forecast");
 
 //the whole express app is wrapped up in this function below
 const app = express();
+const port = process.env.PORT || 3000;
 
 //by dfault views folder in the root director should house all the handlebars(hbs) files.
 // but incase you want to rename the folder follow the steps below
@@ -118,6 +119,10 @@ app.get("*", (req, res) => {
 //   res.send("<h1> About Page</h1>");
 // });
 
-app.listen(3000, () => {
-  console.log("server is up on port 3000");
+// app.listen(3000, () => {
+//   console.log("server is up on port 3000");
+// });
+
+app.listen(port, () => {
+  console.log("server is up on port " + port);
 });
